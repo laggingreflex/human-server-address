@@ -1,0 +1,7 @@
+{
+  "name": "human-server-address",
+  "version": "0.0.0",
+  "description": "Get human readable server address",
+  "main": "index.js",
+  "repository": "laggingreflex/human-server-address"
+}
