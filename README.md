@@ -3,6 +3,8 @@
 
 Get human readable server address
 
+Converts `{address: '::', port: 80}` to `http://localhost`
+
 ## Install
 
 ```
@@ -18,7 +20,7 @@ const address = require('human-server-address')
 const server = createServer()
 server.listen()
 
-console.log(address(server))
+console.log(address(server.address()))
 // => http://localhost
 ```
 ### API
