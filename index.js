@@ -13,7 +13,7 @@ module.exports = (address, {
   halt = false,
   silent = true,
 } = {}) => {
-  if (!address.address && address.port) throw new Error('Invalid server address object' + typeof address === 'string' ? ` (it's probably a pipe, not meant for humans)` : '');
+  if (!address.address && address.port) throw new Error('Invalid server address object. Expected an `{address, port}`');
 
   const port = address.port === 80 ? '' : ':' + address.port;
   const host = (host) => new URL(protocol + host + port);
