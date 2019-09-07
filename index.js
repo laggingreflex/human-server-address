@@ -1,3 +1,4 @@
+const { URL } = require('url');
 const utils = require('./utils');
 
 module.exports = (address, {
@@ -15,7 +16,7 @@ module.exports = (address, {
   if (!address.address && address.port) throw new Error('Invalid server address object' + typeof address === 'string' ? ` (it's probably a pipe, not meant for humans)` : '');
 
   const port = address.port === 80 ? '' : ':' + address.port;
-  const host = (host) => protocol + host + port;
+  const host = (host) => new URL(protocol + host + port);
 
   const safe = halt ? f => f() : f => utils.catchFn(f, silent ? () => '(unavailable)' : '(unavailable)');
 
